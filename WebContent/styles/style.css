@@ -1,0 +1,419 @@
+/*
+	===============================
+	Reset
+	===============================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    
+
+
+
+body {
+	font: 300 16px/22px "Lato", "Open Sans", Helvetica, sans-serif;
+}
+
+
+    
+/*
+	===============================
+	Layout
+	===============================
+*/ 
+    
+.header{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 60px;
+	padding-top: 18px;
+	border-bottom: 1px solid #C6C6C6;
+	position: fixed;
+	background: #FFF;
+	z-index: 1000;
+}
+
+.footer{
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #C6C6C6;
+	background: #FFF;
+}
+
+.logo{
+	text-align: center;
+	font-size: 24px;
+	font-weight: 300;
+	color: #FF533D;
+}
+
+.container{
+	padding: 8%;
+}
+
+.container, .grid{
+	margin: 0 auto;
+	width: 100%;
+}
+
+.col-1-3{
+	width: 30%;
+}
+
+.col-1-3, .col-2-5, .col-3-5{
+	display: inline-block;
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: top;
+	height: 100%;
+}
+
+.col-1-3:first-child{
+	margin-left: 0;
+}
+
+.col-1-3:last-child{
+	margin-right: 0;
+}
+
+.col-2-5{
+	width: 35%;
+}
+
+.col-3-5{
+	width: 51%;
+}
+
+.row{
+	width: 100%;
+	height: 210px;
+	align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.divider{
+	width: 100%;
+	height: 45px;
+}
+
+.teaser{
+	background-color: #FFF;
+	height: 100%;
+}
+
+.teaser img{
+	max-width: 100%;
+	margin: 0;
+}
+
+.description{
+	flex-grow: 2;
+	width: 54%;
+	padding: 10px;
+	position: relative;
+}
+
+.description p{
+	font-size: 12px;
+	margin-top: 6px;
+	margin-right: 2px;
+	line-height: 15px;
+	color: #7A7A7A;
+}
+
+.eta{
+	margin-top: 2px;
+	font-size: 12px;
+	color: #000;
+}
+
+.dining-hall-logo{
+	flex-grow: 1;
+	padding-left: 15px;
+	width: 44%;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 3px solid #C6C6C6;
+	transition: background-color 0.6s ease-out;
+	
+}
+
+.flex-container:hover{
+	background-color: #F5F5F5;
+	
+}
+
+
+/*
+	===============================
+	Text Styling
+	===============================
+*/
+
+a{
+	text-decoration: none;
+	color: #FF533D;
+}
+
+h2{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+form{
+	width: 405px;
+	float: right;
+}
+
+.meal{
+	background-color: #FF533D;
+	display: flex;
+	justify-content: center;
+	height: 60px;
+}
+
+.meal h2{
+	margin-top: 18px;
+	color: #FFF;
+}
+
+
+
+/*
+	===============================
+	Button Styling
+	===============================
+*/
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+input[type="radio"] {
+	visibility: hidden;
+}
+
+input[type="submit"] {
+	background-color: #FF533D;
+	width: 100%;
+	height: 45px;
+	color: #FFF;
+	font-weight: 100;
+	font-size: 20px;
+	transition: 0.4s ease-out;
+	border: none;
+	border-radius: 2px;
+}
+
+input[type="submit"]:hover {
+	background-color: #40e0d0;
+	color: #000;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #FF533D;
+  border-color: #FF533D;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.round p{
+	position: absolute;
+	left: 50px;
+	display: block;
+	width: 300px;
+}
+
+.item {
+	width: 100%;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #FFF;
+	height: 90px;
+	margin: auto;
+	width: 100%;
+	padding: 8%;
+	transition: 0.7s;
+}
+
+.item:hover {
+	background-color: #FCFCFC;
+}
+
+.dining-header{
+	position: fixed;
+}
+
+.dining-header img{
+	width: 100%;
+	margin: 0;
+}
+
+.dining-description{
+	background-color: #F5F5F5;
+	width: 100%;
+	padding: 30px;
+	margin-top: 45px;
+	border-bottom: 3px solid #FF533D;
+}
+
+.dining-description h2{
+	margin-bottom: 15px;
+	font-size: 28px;
+}
+
+.dining-description p{
+	font-size: 20px;
+	line-height: 32px;
+}
+
+.category-header{
+	height: 30px;
+	margin-bottom: 15px;
+	display: flex;
+}
+
+.category-header:last-child{
+	margin-top: 60px;
+}
+
+.category-header h1{
+	color: #0F1626;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.main-logo{
+	width: 27px;
+	height: 27px;
+	position: relative;
+	bottom: 4px;
+	margin-right: 1px;
+}
+
+.main-logo img{
+	width: 100%;
+}
+
+.flex-column{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 15px;
+	border-right: 1px solid #C6C6C6;
+	border-left: 1px solid #C6C6C6;
+}
+
+.flex-column h1{
+	margin-bottom: 30px;
+	font-size: 28px;
+	color: #FF533D;
+}
+
+.cart{
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.orderForm{
+	border: none;
+    border-bottom: 1px solid #BCBCBC;
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 300;
+}
+
+.orderForm:focus {
+	outline: 0;
+}
+
