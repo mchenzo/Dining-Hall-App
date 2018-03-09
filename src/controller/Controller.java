@@ -77,7 +77,7 @@ public class Controller extends HttpServlet {
 		switch(action) {
 			case "checkout": page = "/checkoutHandler.jsp";
 			break;
-			case "64": page = "/64.jsp";
+			case "complete": page = "/orderComplete.jsp";
 			break;
 			case "cv": page = "/cv.jsp";
 			break;
@@ -88,20 +88,27 @@ public class Controller extends HttpServlet {
 			default: page = "/index.jsp";
 		}
 		
-		for (int i = 0; i < 15; i++) {
-			if (request.getParameter("order" + i) != null) {
-				
-				if (page.indexOf('?') == -1) {
-					page += "?";
-				} else {
-					page += "&";
+		if (action.equals("checkout")) {
+			for (int i = 0; i < 15; i++) {
+				if (request.getParameter("order" + i) != null) {
+					
+					if (page.indexOf('?') == -1) {
+						page += "?";
+					} else {
+						page += "&";
+					}
+					
+					page += "order" + i + "=";
+					String input = request.getParameter("order" + i);
+					input = input.replaceAll("/$", "");
+					page += input;
 				}
-				
-				page += "order" + i + "=";
-				String input = request.getParameter("order" + i);
-				input = input.replaceAll("/$", "");
-				page += input;
 			}
+		} else if (action.equals("complete")) {
+			page += "?email=";
+			String email = request.getParameter("email");
+			email = email.replaceAll("/$", "");
+			page += email;
 		}
 		
 		response.sendRedirect(page);

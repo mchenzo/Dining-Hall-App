@@ -21,30 +21,34 @@
 		
 			<h1>Your Order</h1>
 			
-			<input class = "orderForm" type = "text" placeholder = "First Name" >
-			<input class = "orderForm" type = "text" placeholder = "Last Name" >
-			<input class = "orderForm" type = "text" placeholder = "Phone Number" >
-			<input class = "orderForm" type = "text" placeholder = "Email" >
-			<input class = "orderForm" type = "text" placeholder = "Student ID" >
-			<input class = "orderForm" type = "password" placeholder = "Password" >
+			<form action = "/Controller?action=complete" method = "post" >
 			
-			<p style = "margin-top: 30px;" class = "pricing" >
-			<% 
-				double total = 0.0;
+				<input class = "orderForm" name = "first-name" type = "text" placeholder = "First Name" >
+				<input class = "orderForm" name = "last-name" type = "text" placeholder = "Last Name" >
+				<input class = "orderForm" name = "phone" type = "text" placeholder = "Phone Number" >
+				<input class = "orderForm" name = "email" type = "text" placeholder = "Email" >
+				<input class = "orderForm" name = "student-id" type = "text" placeholder = "Student ID" >
+				<input class = "orderForm" name = "password" type = "password" placeholder = "Password" >
 			
-				for (int i = 0; i < 15; i++) {
-					if (request.getParameter("order" + i) != null) {
-						total += Double.parseDouble(request.getParameter("order" + i));
+				<p style = "margin-top: 30px;" class = "pricing" >
+				<% 
+					double total = 0.0;
+				
+					for (int i = 0; i < 15; i++) {
+						if (request.getParameter("order" + i) != null) {
+							total += Double.parseDouble(request.getParameter("order" + i));
+						}
 					}
-				}
+					
+					total = Math.round(total * 100.0) / 100.0;
+					
+					out.println("Your order total is: $" + total);
+				%>
+				</p>
 				
-				total = Math.round(total * 100.0) / 100.0;
+				<input style = "margin-top: 30px; width: 330px" class = "submit" type = "submit" value = "Place Order">
 				
-				out.println("Your order total is: $" + total);
-			%>
-			</p>
-			
-			<input style = "margin-top: 30px; width: 330px" class = "submit" type = "submit" value = "Place Order">
+			</form>
 			
 		</div>
 		
