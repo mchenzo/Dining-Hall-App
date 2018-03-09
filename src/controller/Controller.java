@@ -109,6 +109,16 @@ public class Controller extends HttpServlet {
 			String email = request.getParameter("email");
 			email = email.replaceAll("/$", "");
 			page += email;
+			
+			page += "&first=";
+			String firstName = request.getParameter("first-name");
+			firstName = firstName.replaceAll("/$", "");
+			page += firstName;
+			
+			page += "&last=";
+			String lastName = request.getParameter("last-name");
+			lastName = lastName.replaceAll("/$", "");
+			page += lastName;
 		}
 		
 		response.sendRedirect(page);

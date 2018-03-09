@@ -16,16 +16,17 @@
 	
 	<%! Properties props = new Properties(); %>
 	<%! Session sess = Session.getDefaultInstance(props, null); %>
-	<% 
+	<%
+		String name = request.getParameter("first") + request.getParameter("last");
 		try {
 			Message msg = new MimeMessage(sess);
 			msg.setFrom(new InternetAddress("michael.chen880@gmail.com", "michael.chen880@gmail.com Admin"));
 			msg.addRecipient(Message.RecipientType.TO,
-			                   new InternetAddress("michael.chen880@gmail.com", "Michael Chen"));
-			msg.setSubject("Your order is ready");
-			msg.setText("This is a test");
+			                   new InternetAddress(request.getParameter("email"), name));
+			msg.setSubject("Your Dormdash order is ready");
+			msg.setText("" + name + ",your dormdash order is ready! Sincerely, your friends at Dormdash.");
 			Transport.send(msg);
-		} catch (Exception e) {
+		} catch (AddressException e) {
 			System.out.println("Error" + e);
 		} 
 	%>
