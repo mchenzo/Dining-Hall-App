@@ -21,6 +21,9 @@
 		
 			<h1>Your Order</h1>
 			
+			<input class = "orderForm" type = "text" placeholder = "First Name" >
+			<input class = "orderForm" type = "text" placeholder = "Last Name" >
+			<input class = "orderForm" type = "text" placeholder = "Phone Number" >
 			<input class = "orderForm" type = "text" placeholder = "Email" >
 			<input class = "orderForm" type = "text" placeholder = "Student ID" >
 			<input class = "orderForm" type = "password" placeholder = "Password" >
@@ -37,7 +40,7 @@
 				
 				total = Math.round(total * 100.0) / 100.0;
 				
-				out.println("Your total is: $" + total);
+				out.println("Your order total is: $" + total);
 			%>
 			</p>
 			
