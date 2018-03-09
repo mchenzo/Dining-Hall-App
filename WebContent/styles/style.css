@@ -295,6 +295,10 @@ input[type="submit"]:hover {
 	color: #000;
 }
 
+input[type="submit"]:focus {
+	outline: 0;
+}
+
 .round input[type="checkbox"]:checked + label {
   background-color: #FF533D;
   border-color: #FF533D;
