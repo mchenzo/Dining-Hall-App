@@ -17,14 +17,15 @@
 	<%! Properties props = new Properties(); %>
 	<%! Session sess = Session.getDefaultInstance(props, null); %>
 	<%
-		String name = request.getParameter("first") + request.getParameter("last");
+		String name = request.getParameter("first") + " " + request.getParameter("last");
 		try {
 			Message msg = new MimeMessage(sess);
 			msg.setFrom(new InternetAddress("michael.chen880@gmail.com", "michael.chen880@gmail.com Admin"));
 			msg.addRecipient(Message.RecipientType.TO,
 			                   new InternetAddress(request.getParameter("email"), name));
-			msg.setSubject("Your Dormdash order is ready");
-			msg.setText("" + name + ",your dormdash order is ready! Sincerely, your friends at Dormdash.");
+			msg.setSubject("Your Dormdash order is is confirmed");
+			msg.setText("" + name + ", \r\n your dormdash order has been received! It should be ready in jiffy! "
+							+ "\r\n \r\n Sincerely, your friends at Dormdash.");
 			Transport.send(msg);
 		} catch (AddressException e) {
 			System.out.println("Error" + e);
@@ -40,7 +41,7 @@
 			
 			<p>
 				You should receive a confirmation email shortly 
-				notifying you when your food is ready
+				notifying you when your food is ready. Enjoy!
 			</p>
 			
 		</div>
