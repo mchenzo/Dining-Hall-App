@@ -1,3 +1,12 @@
+<% 
+/*
+* This file contains contains the HTML and Java for the checkout page
+* The java in this file extracts parameters from the URL and renders
+* the appropriate HTML
+* 
+* Contributors: Michael, Saar
+*/
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,7 +30,7 @@
 		
 			<h1>Your Order</h1>
 			
-			<form action = "/Controller?action=complete" method = "post" >
+			<form action = "/Controller?action=complete" method = "post" style = "padding-left: 8%; text-align: center" >
 			
 				<input class = "orderForm" name = "first-name" type = "text" placeholder = "First Name" >
 				<input class = "orderForm" name = "last-name" type = "text" placeholder = "Last Name" >
@@ -34,12 +43,14 @@
 				<% 
 					double total = 0.0;
 				
+					//extract all order parameters from the URL
 					for (int i = 0; i < 15; i++) {
 						if (request.getParameter("order" + i) != null) {
 							total += Double.parseDouble(request.getParameter("order" + i));
 						}
 					}
 					
+					//round off total to 2 decimal places
 					total = Math.round(total * 100.0) / 100.0;
 					
 					out.println("Your order total is: $" + total);

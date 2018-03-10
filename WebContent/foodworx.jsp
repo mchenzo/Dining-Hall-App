@@ -1,3 +1,10 @@
+<% 
+/*
+* This file contains contains the HTML and Java for the Food Worx
+* menu page. 
+* Contributors: Michael, Jonathan
+*/
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,6 +43,7 @@
 	
 			<%! 
 			public int i = 0;
+			//menu entries for Food Worx
 			public String[][] menu = { 
 					{"Grilled Cheese Sandwich - $2.95", "2.95"},
 			        {"Ham Sandwich - $6.75", "6.75"},
@@ -51,12 +59,22 @@
 			        {"Mandarin Salad - $6.50", "6.50"},
 			        {"Sesame Chicken Wrap - $6.75", "6.75"}
 			};
+
+			/**
+			* position method, returns the price of the desired menu entry
+			* @param int r, the row of the desired entry
+			* @param int c, the col of the desired entry
+			* @result String representing the price of the retrieved entry
+			*/
 			public String position(int r, int c) {
 				return menu[r][c];
 			}
 			%>
 			
-			<% for (i = 0; i < menu.length; i++) { %>
+			<% 
+			//for loop to render menu entries in html
+			for (i = 0; i < menu.length; i++) {
+			%>
 			
 			
 			<div class="item">

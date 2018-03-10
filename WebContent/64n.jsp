@@ -1,3 +1,10 @@
+<% 
+/*
+* This file contains contains the HTML and Java for the 64 North
+* menu page. 
+* Contributors: Michael, Jonathan
+*/
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,6 +42,7 @@
 	
 			<%! 
 			public int i = 0;
+			//menu entries for 64 North
 			public String[][] menu = { 
 					{"Ahi Poke Salad - $10.00", "10.00"},
 			        {"Chipotle Shrimp Linguini - $12.00", "12.00"},
@@ -50,18 +58,28 @@
 			        {"Orange Almond Cake & Cream Cheese Frosting - $6.95", "6.95"},
 			        {"Skillet Peach & Blueberry Cobbler - $7.00", "7.00"}
 			};
+
+			/**
+			* position method, returns the price of the desired menu entry
+			* @param int r, the row of the desired entry
+			* @param int c, the col of the desired entry
+			* @result String representing the price of the retrieved entry
+			*/
 			public String position(int r, int c) {
 				return menu[r][c];
 			}
 			%>
 			
-			<% for (i = 0; i < menu.length; i++) { %>
+			<% 
+			//for loop to render menu entries in html
+			for (i = 0; i < menu.length; i++) { 
+			%>
 			
 			
 			<div class="item">
 			  	<div class="round">
-			    		<input type="checkbox" id=<%= i %> name = <%= "order" + i %> value = <%= position(i, 1) %>/>
-			    		<label for=<%= i %>><p><% out.println(position(i,0)); %></p></label>
+			    		<input type = "checkbox" id = <%= i %> name = <%= "order" + i %> value = <%= position(i, 1) %>/>
+			    		<label for = <%= i %> ><p><% out.println(position(i,0)); %></p></label>
 			  	</div>
 			</div>
 

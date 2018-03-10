@@ -421,3 +421,8 @@ input[type="submit"]:focus {
 	outline: 0;
 }
 
+.completeOrder {
+	padding: 8%;
+}
+
+

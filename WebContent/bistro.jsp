@@ -1,3 +1,10 @@
+<% 
+/*
+* This file contains contains the HTML and Java for the The Bistro
+* menu page. 
+* Contributors: Michael
+*/
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,6 +45,7 @@
 	
 			<%! 
 			public int i = 0;
+			//menu entries for The Bistro
 			public String[][] menu = { 
 					{"Bistro Salad w/ Hoisin Chicken - $9.00", "9.00"},
 			        {"Chicken Potstickers - $9.00", "9.00"},
@@ -53,12 +61,22 @@
 			        {"The Sun God Roll - $13.00", "13.00"},
 			        {"Lemongrass Ginger Brulee - $5.00", "5.00"}
 			};
+
+			/**
+			* position method, returns the price of the desired menu entry
+			* @param int r, the row of the desired entry
+			* @param int c, the col of the desired entry
+			* @result String representing the price of the retrieved entry
+			*/
 			public String position(int r, int c) {
 				return menu[r][c];
 			}
 			%>
 			
-			<% for (i = 0; i < menu.length; i++) { %>
+			<% 
+			//for loop to render menu entries in html
+			for (i = 0; i < menu.length; i++) { 
+			%>
 			
 			<div class="item">
 			  	<div class="round">

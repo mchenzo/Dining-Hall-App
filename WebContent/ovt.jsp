@@ -1,3 +1,10 @@
+<% 
+/*
+* This file contains contains the HTML and Java for the OVT
+* menu page. 
+* Contributors: Michael, Esther
+*/
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,6 +42,7 @@
 	
 			<%! 
 			public int i = 0;
+			//menu entries for OVT
 			public String[][] menu = { 
 					{"Mediterranean Rigatoni - $4.95", "4.95"},
 			        {"Fire Roasted Torrey's Chicken Wings - $9.00", "9.00"},
@@ -50,12 +58,22 @@
 			        {"Pomegranate Blueberry Smoothie - $6.95", "6.95"},
 			        {"Strawberry Mango Smoothie - $3.75", "3.75"}
 			};
+
+			/**
+			* position method, returns the price of the desired menu entry
+			* @param int r, the row of the desired entry
+			* @param int c, the col of the desired entry
+			* @result String representing the price of the retrieved entry
+			*/
 			public String position(int r, int c) {
 				return menu[r][c];
 			}
 			%>
 			
-			<% for (i = 0; i < menu.length; i++) { %>
+			<% 
+			//for loop to render menu entries in html
+			for (i = 0; i < menu.length; i++) { 
+			%>
 			
 			
 			<div class="item">

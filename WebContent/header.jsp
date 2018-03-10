@@ -1,3 +1,5 @@
+<!-- Header HTML; included in every file -->
+
 <div class = "header">
 		<div class = "main-logo">
 			<img src = "./images/dormdash.png" alt = "Dormdash Logo">
